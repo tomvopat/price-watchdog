@@ -28,7 +28,7 @@ Selector column is CSS selector. See [BeatifulSoup documentation](https://www.cr
 
 ### Dogs table document
 
-```json
+```python
 dogs = [
     {
         'name': '',
@@ -41,7 +41,7 @@ dogs = [
 
 ### Telegrams table document
 
-```json
+```python
 telegrams = [
     {
         'api_url': '',
