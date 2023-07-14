@@ -68,7 +68,7 @@ for dog in dogs:
     page = requests.get(dog['url'], headers=REQUEST_HEADERS)
     if page.status_code != 200:
         logging.error("failed to scrape: %s", str(page))
-        notify(telegrams, 'Failed to scrape: {dog["name"]}')
+        notify(telegrams, f'Failed to scrape: {dog["name"]}')
         continue
 
     soup = BeautifulSoup(page.content, "html.parser")
