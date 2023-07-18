@@ -77,10 +77,10 @@ for dog in dogs:
     logging.debug("scrape result: %s", str(results))
     if len(results) == 0:
         logging.warning("no results: %s", dog['name'])
-        notify(telegrams, "No results: {dog['name']}")
+        notify(telegrams, f"No results: {dog['name']}")
     elif len(results) > 1:
         logging.warning("multiple results for %s: %s", dog['name'], str(results))
-        notify(telegrams, "WARNING: multiple results for {dog['name']}")
+        notify(telegrams, f"WARNING: multiple results for {dog['name']}")
 
     for result in results:
         new_price = parse_price(result.text)
@@ -88,7 +88,7 @@ for dog in dogs:
 
         if dog['price'] != new_price:
             table_dogs.update({'price': new_price}, doc_ids = [dog.doc_id])
-            MESSAGE = """{dog['name']}
+            MESSAGE = f"""{dog['name']}
     - old price: {dog['price']}e
     - new price: {new_price}e
     {dog['url']}"""
